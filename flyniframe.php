@@ -38,7 +38,7 @@ add_action('admin_init', function() {
 		return;
 
 	add_filter("mce_external_plugins", function($plugin_array) {
-		$plugin_array['flyniframe'] = plugins_url('scripts/iframe.js', __FILE__);
+		$plugin_array['flyniframe'] = admin_url('admin-ajax.php?action=flyniframe_tinymce_modal_js');
 		return $plugin_array;
 	});
 	add_filter('mce_buttons', function($buttons) {
@@ -47,7 +47,13 @@ add_action('admin_init', function() {
 	});
 });
 
+add_action('wp_ajax_flyniframe_tinymce_modal_js', function() {
+	require __DIR__.'/scripts/iframe.js.php';
+	exit;
+});
+
 add_action('wp_ajax_flyniframe_tinymce_modal', function() {
 	require __DIR__.'/partials/iframe.php';
+	exit;
 });
 ?>
