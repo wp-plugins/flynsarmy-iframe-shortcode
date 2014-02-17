@@ -3,7 +3,7 @@
 Plugin Name: IFrame Shortcode
 Plugin URI: http://www.flynsarmy.com
 Description: Allows the insertion of code to display an external webpage within an iframe. The tag to insert the code is: <code>[iframe src="http://yoururl.com" width="400" height="600"]</code>
-Version: 1.0
+Version: 1.0.1
 Author: Flyn San
 Author URI: http://www.flynsarmy.com
 
@@ -38,7 +38,7 @@ add_action('admin_init', function() {
 		return;
 
 	add_filter("mce_external_plugins", function($plugin_array) {
-		$plugin_array['flyniframe'] = plugins_url('scripts/iframe.js', __FILE__);
+		$plugin_array['flyniframe'] = admin_url('admin-ajax.php?action=flyniframe_tinymce_modal_js');
 		return $plugin_array;
 	});
 	add_filter('mce_buttons', function($buttons) {
@@ -47,7 +47,13 @@ add_action('admin_init', function() {
 	});
 });
 
+add_action('wp_ajax_flyniframe_tinymce_modal_js', function() {
+	require __DIR__.'/scripts/iframe.js.php';
+	exit;
+});
+
 add_action('wp_ajax_flyniframe_tinymce_modal', function() {
 	require __DIR__.'/partials/iframe.php';
+	exit;
 });
 ?>
