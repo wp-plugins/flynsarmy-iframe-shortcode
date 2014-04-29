@@ -4,8 +4,8 @@
                ed.addCommand('flyniframe', function() {
                     ed.windowManager.open({
                          file : "<?= admin_url('admin-ajax.php?action=flyniframe_tinymce_modal') ?>",
-                         width : 783 + parseInt(ed.getLang('flyniframe.delta_width', 0)),
-                         height : 275 + parseInt(ed.getLang('flyniframe.delta_height', 0)),
+                         width : 650 + parseInt(ed.getLang('flyniframe.delta_width', 0)),
+                         height : 350 + parseInt(ed.getLang('flyniframe.delta_height', 0)),
                          inline : 1
                     }, {
                          plugin_url : url
