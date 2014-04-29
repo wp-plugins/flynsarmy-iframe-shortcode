@@ -37,6 +37,8 @@ The tag to insert the code is:
 
 = 1.0.2 =
 
+April 30, 2014
+
 * Style tweaks for WP 3.9
 
 = 1.0.1 =
