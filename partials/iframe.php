@@ -30,47 +30,57 @@
 		tinyMCEPopup.onInit.add(FlynIFrame.init, FlynIFrame);
 	</script>
 </head>
-<body class="wp-core-ui">
-	<form id="wp-link">
-		<div id="link-options">
-			<div>
-				<label><span>URL</span><input id="url" name="src" type="text"></label>
-			</div>
-			<div>
-				<label><span>Width</span><input id="width" type="text" name="width"></label><br/>
-				<label><span>&nbsp;</span><em>e.g. 400px or 100%</em></label>
-			</div>
-			<div>
-				<label><span>Height</span><input id="height" type="text" name="height"></label><br/>
-				<label><span>&nbsp;</span><em>e.g. 600px or 75%</em></label>
-			</div>
-			<div>
-				<br/>
-				<label>
-					<span></span>
-					<input type="checkbox" id="frameborder" name="frameborder" value="1"> Show the iframe border?
-				</label>
-				<br/><br/>
-			</div>
-			<div>
-				<label><span>Scrollbars</span>
-				<select id="scrolling" name="scrolling">
-					<option value="auto">Auto</option>
-					<option value="yes">Yes</option>
-					<option value="yes">No</option>
-				</select>
-				<br/>
-			</div>
-		</div>
+<body class="wp-core-ui" style="margin:0;overflow-x:scroll">
+	<div id="wp-link-wrap" class="wp-core-ui search-panel-visible" style="display:block;width:100%;left:0;margin:0;box-shadow:none">
+		<form id="wp-link">
+			<div id="link-selector" style="overflow:scroll;position:static">
+				<div id="link-options">
+					<div>
+						<label><span>URL</span><input id="url" name="src" type="text"></label>
+					</div>
+					<div>
+						<label><span>Width</span><input id="width" type="text" name="width"></label><br/>
+						<label><span>&nbsp;</span><em>e.g. 400px or 100%</em></label>
+					</div>
+					<div>
+						<label><span>Height</span><input id="height" type="text" name="height"></label><br/>
+						<label><span>&nbsp;</span><em>e.g. 600px or 75%</em></label>
+					</div>
+					<div>
+						<br/>
+						<label>
+							<span></span>
+							<input type="checkbox" id="frameborder" name="frameborder" value="1"> Show the iframe border?
+						</label>
+						<br/><br/>
+					</div>
+					<div>
+						<label><span>Scrollbars</span>
+						<select id="scrolling" name="scrolling">
+							<option value="auto">Auto</option>
+							<option value="yes">Yes</option>
+							<option value="yes">No</option>
+						</select>
+						<br/>
+					</div>
 
-		<div class="submitbox">
-			<div id="wp-link-update">
-				<input type="button" value="Add IFrame" class="button-primary" onclick="javascript:FlynIFrame.insert(FlynIFrame.e)">
+					<div style="clear:both"></div>
+				</div>
+				<div style="clear:both"></div>
 			</div>
-			<div id="wp-link-cancel">
-				<a class="submitdelete deletion" href="#" onclick="tinyMCEPopup.close();">Cancel</a>
+
+			<div class="submitbox">
+				<div id="wp-link-update">
+					<input type="button" value="Add IFrame" class="button-primary" onclick="javascript:FlynIFrame.insert(FlynIFrame.e)">
+				</div>
+				<div id="wp-link-cancel">
+					<a class="submitdelete deletion" href="#" onclick="tinyMCEPopup.close();">Cancel</a>
+				</div>
 			</div>
-		</div>
-</form>
+
+			<div style="clear:both"></div>
+		</form>
+	</div>
+
 </body>
 </html>
